@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6848978e59034669a6f20c4abd41679f" Name="Diagram1" >
+        <EntityTypeShape EntityType="Event.Categories" Width="1.5" PointX="3.75" PointY="11.375" />
+        <EntityTypeShape EntityType="Event.Events" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="Event.FederalDistricts" Width="1.5" PointX="1.5" PointY="4.625" />
+        <EntityTypeShape EntityType="Event.Messages" Width="1.5" PointX="6" PointY="6.875" />
+        <EntityTypeShape EntityType="Event.MessageStatuses" Width="1.5" PointX="6" PointY="12.25" />
+        <EntityTypeShape EntityType="Event.PopularGroups" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="Event.PopularMessages" Width="1.5" PointX="8.25" PointY="11" />
+        <EntityTypeShape EntityType="Event.Processing" Width="1.5" PointX="8.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Event.Staff" Width="1.5" PointX="6" PointY="19" />
+        <EntityTypeShape EntityType="Event.StaffEvents" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="Event.StaffTypes" Width="1.5" PointX="3.75" PointY="19.875" />
+        <EntityTypeShape EntityType="Event.Types" Width="1.5" PointX="3.75" PointY="5" />
+        <EntityTypeShape EntityType="Event.Users" Width="1.5" PointX="3.75" PointY="0.75" />
+        <AssociationConnector Association="Event.FK_Messages_Categories" />
+        <AssociationConnector Association="Event.FK_Messages_Events" />
+        <AssociationConnector Association="Event.FK_PopularGroups_Events" />
+        <AssociationConnector Association="Event.FK_StaffEvents_Events" />
+        <AssociationConnector Association="Event.FK_Users_FederalDistricts" />
+        <AssociationConnector Association="Event.FK_Messages_Types" />
+        <AssociationConnector Association="Event.FK_Messages_Users" />
+        <AssociationConnector Association="Event.FK_PopularMessages_Messages" />
+        <AssociationConnector Association="Event.FK_Processing_Messages" />
+        <AssociationConnector Association="Event.FK_Processing_MessageStatuses" />
+        <AssociationConnector Association="Event.FK_PopularMessages_PopularGroups" />
+        <AssociationConnector Association="Event.FK_Processing_Staff" />
+        <AssociationConnector Association="Event.FK_Staff_StaffTypes" />
+        <AssociationConnector Association="Event.FK_StaffEvents_Staff" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
