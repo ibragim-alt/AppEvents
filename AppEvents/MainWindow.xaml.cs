@@ -20,11 +20,21 @@ namespace AppEvents
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Events> events = new List<Events>();
         public MainWindow()
         {
             InitializeComponent();
             var listEvents = Helper.GetContext().Events.ToList();
             CmbEvents.ItemsSource = listEvents;
+            using (EventContainer db = new EventContainer())
+            {
+                events.Clear();
+                events = db.Events.ToList();
+                CmbEvents.ItemsSource = events;
+                CmbEvents.DisplayMemberPath = "Name";
+                CmbEvents.SelectedValuePath = "Id";
+                TbEventsDescriptions.Text = listEvents.ToString();
+            }
         }
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
