@@ -33,14 +33,15 @@ namespace AppEvents
                 CmbEvents.ItemsSource = events;
                 CmbEvents.DisplayMemberPath = "Name";
                 CmbEvents.SelectedValuePath = "Id";
-                TbEventsDescriptions.Text = listEvents.ToString();
+                
             }
         }
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TbLogin.Text) && !string.IsNullOrEmpty(PwbPassword.Password))
+            if (!string.IsNullOrEmpty(TbLogin.Text) && !string.IsNullOrEmpty(PwbPassword.Password))
             {
+               
                 try
                 {
                     if (TbLogin.Text == Helper.GetContext().Staff.FirstOrDefault(x => x.Login.Contains(TbLogin.Text)).Login
@@ -60,14 +61,15 @@ namespace AppEvents
             }
             else
             {
-               MessageBox.Show("Авторизация не успешна. Не верны логин или пароль ", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Авторизация не успешна. Не заполнены логин или пароль ", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
         }
 
         private void BtnNewMessage_Click(object sender, RoutedEventArgs e)
         {
-
+            Message message = new Message();
+            message.Show();
         }
 
         private void BtnPopMessage_Click(object sender, RoutedEventArgs e)
@@ -79,6 +81,29 @@ namespace AppEvents
         private void CmbEvents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+
+            if (CmbEvents.SelectedItem != null)
+            {
+                var selectedEvent = CmbEvents.SelectedItem as Events;
+                TbEventsName.Text = selectedEvent.Name;
+                TbEventsDescriptions.Text = selectedEvent.Description;
+                DateTime dateTimeNow = DateTime.Now;
+                if (dateTimeNow > selectedEvent.EndDatetime)
+                {
+                    TbEventsStatus.Text = " Прошедшее";
+                }
+                else
+                {
+                    if (dateTimeNow > selectedEvent.BeginDatetime && dateTimeNow < selectedEvent.EndDatetime)
+                    {
+                        TbEventsStatus.Text = "Текущее";
+                    }
+                    else
+                    {
+                        TbEventsStatus.Text = "Предстоящее";
+                    }
+                }
+            }
         }
     }
 }

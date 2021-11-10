@@ -78,6 +78,9 @@
     <Compile Include="FederalDistricts.cs">
       <DependentUpon>Event.tt</DependentUpon>
     </Compile>
+    <Compile Include="Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Messages.cs">
       <DependentUpon>Event.tt</DependentUpon>
     </Compile>
@@ -114,6 +117,9 @@
     <Compile Include="Users.cs">
       <DependentUpon>Event.tt</DependentUpon>
     </Compile>
+    <Compile Include="WinPopularMessage.xaml.cs">
+      <DependentUpon>WinPopularMessage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,11 +143,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Message.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PopAppeals.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinPopularMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

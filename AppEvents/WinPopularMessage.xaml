@@ -1,0 +1,26 @@
+﻿<Window x:Class="AppEvents.WinPopularMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppEvents"
+        mc:Ignorable="d"
+        Title="WinPopularMessage" Height="450" Width="800" WindowStartupLocation="CenterScreen" Style="{StaticResource DefaultWindow}"> 
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Name="Lablog"  Grid.Column="0" Content="Label" HorizontalAlignment="Left" Margin="348,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="СmbPopular" Grid.Row="2" Margin="20" DisplayMemberPath="Content" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
